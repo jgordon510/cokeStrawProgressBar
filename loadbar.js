@@ -56,7 +56,7 @@ var Loader = function(demo) {
     var game = new Phaser.Game(720, 402, Phaser.CANVAS, 'loaderDiv', this.States.LoadState);
 };
 
-var loader = new Loader(true);
+//var loader = new Loader(true);
 
 var progress = function() {
     console.log(loader.getLoadPercentage())
