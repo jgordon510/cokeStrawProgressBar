@@ -1,4 +1,4 @@
-var Loader = function() {
+var Loader = function(demo) {
     this.States = {};
     // *****************************************************************************************
     // LoadState State
@@ -17,7 +17,7 @@ var Loader = function() {
             game.loadState = 'initial';
             game.loadFrame = 0;
             //for demo purposes
-            setTimeout(progress, 1000);
+            if(demo)setTimeout(progress, 1000);
         },
         update: function() {
             if (game.loadState === 'initial') {
@@ -53,10 +53,10 @@ var Loader = function() {
     this.destroy = function() {
         game.destroy();
     }
-    var game = new Phaser.Game(720, 402, Phaser.CANVAS, 'gameDiv', this.States.LoadState);
+    var game = new Phaser.Game(720, 402, Phaser.CANVAS, 'loaderDiv', this.States.LoadState);
 };
 
-var loader = new Loader();
+var loader = new Loader(true);
 
 var progress = function() {
     console.log(loader.getLoadPercentage())
