@@ -13,8 +13,6 @@ var Loader = function(demo) {
                 var frameFileName = 'assets/frame_' + frameSpacer + i.toString() + '.gif';
                 game.load.image('frame' + i.toString(), frameFileName);
             }
-            
-
         },
         create: function() {
             game.scale.pageAlignHorizontally = true;
@@ -25,18 +23,10 @@ var Loader = function(demo) {
             game.loadFrame = 0;
             //for demo purposes
             if (demo) {
-                $("#slider").slider({
-                    value: 0,
-                    min: 0,
-                    max: 100,
-                    step: 10,
-                    slide: function(event, ui) {
-                        $("#slider-value").html(ui.value);
-                        loader.setLoadPercentage(ui.value)
-                    }
+                $("#slider").show();
+                $("#slider").on("change", function(){
+                    loader.setLoadPercentage($("#slider-1").val())
                 });
-
-                $("#slider-value").html($('#slider').slider('value'));
             }
         },
         update: function() {
