@@ -27,6 +27,8 @@ var Loader = function(demo) {
                 $("#slider").on("change", function(){
                     loader.setLoadPercentage($("#slider-1").val())
                 });
+                //$("#slider").append("Slide the slider.")
+                
             }
         },
         update: function() {
